@@ -1,4 +1,5 @@
 import React, { Component} from 'react'
+import BfCardDetailContainer from './BfCardDetailContainer'
 
 export default class BfContainer extends Component {
 
@@ -15,10 +16,11 @@ export default class BfContainer extends Component {
   }
 
   render () {
-    console.log(this.state.bumblefooks)
+    // console.log(this.state.bumblefooks)
     return (
       <div>
         we not heah yet in container
+        < BfCardDetailContainer bumblefooks={this.state.bumblefooks} />
       </div>
     )
   }
