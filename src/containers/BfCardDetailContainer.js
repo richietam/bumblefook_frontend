@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
 import { Grid, Image, Header, Divider, Container, Button, Icon } from 'semantic-ui-react'
+
 
 
 export default class BfCardDetailContainer extends Component {

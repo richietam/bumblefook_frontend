@@ -4,6 +4,8 @@ import BfContainer from './BfContainer'
 import WelcomePage from './WelcomePage'
 
 
+
+
 export default class Bfpage extends Component {
   render() {
     return (
@@ -11,7 +13,6 @@ export default class Bfpage extends Component {
         < NavBar />
         < WelcomePage />
         < BfContainer />
-
       </div>
     )
   }
