@@ -16,3 +16,16 @@ code {
 .imageDetail {
   width: 1200px;
 }
+
+p {
+  font-size: 12px;
+
+}
+
+.column {
+  overflow-x: auto;
+}
+
+/* .row {
+  height: 200px;
+} */

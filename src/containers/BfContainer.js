@@ -19,7 +19,7 @@ export default class BfContainer extends Component {
     // console.log(this.state.bumblefooks)
     return (
       <div>
-        we not heah yet in container
+      
         < BfCardDetailContainer bumblefooks={this.state.bumblefooks} />
       </div>
     )
