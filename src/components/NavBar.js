@@ -4,7 +4,6 @@ import { Input, Menu, Container } from 'semantic-ui-react'
 export default class MenuExampleSecondary extends Component {
 
   state = { activeItem: 'home' }
-
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
@@ -24,6 +23,16 @@ export default class MenuExampleSecondary extends Component {
         <Menu.Item
           name='Favorites'
           active={activeItem === 'Favorites'}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+          name='Add a Bumblefook'
+          active={activeItem === 'Add a Bumblefook'}
+          onClick={this.props.addBumblefook}
+        />
+        <Menu.Item
+          name='Find a Haunted House'
+          active={activeItem === 'Finda Haunted House'}
           onClick={this.handleItemClick}
         />
         <Menu.Menu position='right'>
