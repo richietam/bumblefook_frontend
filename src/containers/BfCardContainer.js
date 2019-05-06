@@ -26,7 +26,7 @@ class BfCardContainer extends React.Component {
 
   render(){
   	return (
-      <Grid>
+      <Grid className="Naomi">
         <Grid.Row columns={3}>
     		  {this.renderBfGallery()}
         </Grid.Row>

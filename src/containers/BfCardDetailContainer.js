@@ -8,8 +8,11 @@ export default class BfCardDetailContainer extends Component {
   render () {
     console.log('BFCardContainer', this.props.bumblefooks)
     return (
+
       < Grid celled={'internally'} >
+
         < Grid.Row >
+
           < Grid.Column width={10} >
             <Image fluid src={this.props.bumblefooks[1] ? this.props.bumblefooks[1].image_url : null} alt="" className="detailImage" />
           </ Grid.Column >
@@ -23,24 +26,35 @@ export default class BfCardDetailContainer extends Component {
             </ Grid.Row >
 
             < Grid.Row >
-
               < Divider />
-
               < Container >
                 <p>
                   {this.props.bumblefooks[1] ? this.props.bumblefooks[1].description : null}
                 </p>
               < / Container >
-
               < br/>
 
               < Container >
+
                 <Button animated>
                   <Button.Content visible >Save</Button.Content>
                   <Button.Content hidden>
                     <Icon name='heart' color='red' />
                   </Button.Content>
                 </Button>
+                <Button animated>
+                  <Button.Content visible >Edit</Button.Content>
+                  <Button.Content hidden>
+                    <Icon name='edit' color='grey' />
+                  </Button.Content>
+                </Button>
+                <Button animated>
+                  <Button.Content visible >Delete</Button.Content>
+                  <Button.Content hidden>
+                    <Icon name='eraser' color='red' />
+                  </Button.Content>
+                </Button>
+
               < / Container >
 
             </ Grid.Row >
