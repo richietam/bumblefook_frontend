@@ -1,22 +1,8 @@
 import React, { Component} from 'react'
-import NavBar from '../components/NavBar'
-import BfContainer from './BfContainer'
-import WelcomePage from './WelcomePage'
-import BfForm from './BfForm'
+import BfCardContainer from './BfCardContainer'
+import BfCardDetailContainer from './BfCardDetailContainer'
 
 export default class Bfpage extends Component {
-
-  state = {
-    bumblefooks: []
-  }
-
-  componentDidMount () {
-    fetch('http://localhost:3000/api/bumblefooks')
-      .then( res => res.json() )
-        .then( (bumblefooks) => this.setState({
-          bumblefooks: bumblefooks
-        }))
-  }
 
 
   // addBumblefook = () => {
@@ -35,12 +21,13 @@ submitNewBumblefook = bumblefook => {
 }
 
   render() {
+    console.log('bf page props',this.props.cardId)
     return (
-      <div >
-        < NavBar addBumblefook={this.addBumblefook} />
-        < WelcomePage />
-        < BfContainer bumblefooks={this.state.bumblefooks} />
-        < BfForm bumblefooks={this.state.bumblefooks} />
+      <div>
+        <BfCardContainer
+          bumblefooks={this.props.bumblefooks}
+          handleBfCardClick={this.props.handleBfCardClick}
+        />
       </div>
     )
   }

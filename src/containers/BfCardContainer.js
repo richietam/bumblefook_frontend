@@ -7,22 +7,18 @@ import { Grid } from 'semantic-ui-react'
 class BfCardContainer extends React.Component {
 
   renderBfGallery= () => {
-    const bfGallery = this.props.bumblefooks.map(bf => {
+    return this.props.bumblefooks.map(bf => {
       return(
-        <Grid.Column>
+        <Grid.Column key={bf.id}>
           <BfCard
             key={bf.id}
             bf={bf}
-            handleClick={this.props.handleClick}
+            handleBfCardClick={this.props.handleBfCardClick}
           />
         </Grid.Column>
       )
     })
-    return bfGallery
   }
-
-
-
 
   render(){
   	return (

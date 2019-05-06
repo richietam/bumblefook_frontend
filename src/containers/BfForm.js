@@ -3,38 +3,40 @@ import { Form } from 'semantic-ui-react'
 
 export default class BfForm extends React.Component {
 
-    constructor() {
-    super()
-
-    this.state = this.getInitialState()
+  state = {
+    name: '',
+    description: '',
+    location: '',
+    image_url: ''
   }
 
-  getInitialState = () => ({ name: '', description: '', location: '', image_url: '' })
+  handleChange = (e) => {
+    console.log(e.target.value)
+    this.setState({
+      [e.target.name]: e.target.value
+    })
 
+  }
 
-  handleChange = (e, { name, value }) => this.setState({ [name]: value })
-
-    handleSubmit = e => {
-      e.preventDefault()
-      const { name, description, location, image_url } = this.state
-      fetch('http://localhost:3000/api/bumblefooks', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json'
-        },
-        body: JSON.stringify({
-          name: 'name',
-          description: 'description',
-          location: 'location',
-          image_url: 'image_url'
-        })
+  handleSubmit = e => {
+    e.preventDefault()
+    const { name, description, location, image_url } = this.state
+    fetch('http://localhost:3000/api/bumblefooks', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify({
+        name: 'name',
+        description: 'description',
+        location: 'location',
+        image_url: 'image_url'
       })
-        .then(resp => resp.json())
-        .then(bumblefook => this.props.addBumblefook(bumblefook))
-        .catch(error => console.error(error))
-      this.setState(this.getInitialState())
-    }
+    })
+      .then(resp => resp.json())
+      .then( (res) => console.log(res) )
+  }
 
 
 render() {
@@ -42,6 +44,7 @@ render() {
   const { handleChange, handleSubmit } = this
  return (
    <div>
+    <br />
      <h3>Add a Bumblefook!</h3>
      <Form onSubmit={handleSubmit}>
        <Form.Group widths="equal">
@@ -77,7 +80,7 @@ render() {
            label="Image URL"
            type="text"
            placeholder="url"
-           name="imageUrl"
+           name="image_url"
            value={this.image_url}
            onChange={this.handleChange}
          />
