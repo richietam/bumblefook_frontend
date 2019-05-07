@@ -97,6 +97,7 @@ class App extends Component {
         return < UserProfile
           bumblefooks={this.state.bumblefooks}
           currentUser={this.state.currentUser}
+          handleBfCardClick={this.handleBfCardClick}
         />
       case "BfCardDetailContainer":
         return < BfCardDetailContainer

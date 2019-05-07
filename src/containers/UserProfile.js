@@ -3,12 +3,14 @@ import { Grid, Image, Header, Divider, Container, Button, Icon, Card } from 'sem
 
 export default class UserProfile extends Component {
 
+
   renderFavBumbleFooks = () => {
     return this.props.bumblefooks.map( bumble => {
       return < Card raised fluid
         image={bumble.image_url}
         id="BfCard"
-        onHover
+        bf={bumble}
+        key={bumble.id}
       />
     })
   }
