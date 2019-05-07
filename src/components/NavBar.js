@@ -8,8 +8,12 @@ export default class MenuExampleSecondary extends Component {
   state = { activeItem: 'home' }
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
+  handleLogoutClick = () => {
+    this.props.handleLogOut()
+  }
+
   render() {
-    // console.log('nav props', this.props.changePage)
+    console.log('nav props', this.props.currentUser)
 
     const { activeItem } = this.state
 
@@ -33,14 +37,14 @@ export default class MenuExampleSecondary extends Component {
         <Menu.Menu position='right'>
 
           <Menu.Item
-            name='Current User'
-            active={activeItem === 'Current User'}
+            name={this.props.currentUser ? this.props.currentUser : null}
+            active={this.props.currentUser ? activeItem === 'Current User' : null}
             onClick={ () => this.props.changePage("UserProfile") }
           />
           <Menu.Item
             name='logout'
             active={activeItem === 'logout'}
-            onClick={this.handleItemClick}
+            onClick={this.handleLogoutClick}
           />
         </Menu.Menu>
       </Menu>
