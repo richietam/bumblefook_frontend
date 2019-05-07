@@ -1,5 +1,6 @@
 import React from "react"
 import { Card, Image } from 'semantic-ui-react'
+import BfModal from './modal'
 
 class BfCard extends React.Component {
 
@@ -8,14 +9,14 @@ class BfCard extends React.Component {
   }
 
 render(){
-  // console.log('bf card props', this.props)
+
   return (
-    <Card>
-      <Image
-        src={this.props.bf.image_url}
-        onClick={this.handleClick}
-      />
+    <div>
+
+    <Card raised fluid id="BfCard">
+      <BfModal {...this.props} />
     </Card>
+    </div>
   )
 }
 

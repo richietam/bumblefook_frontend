@@ -53,6 +53,14 @@ p {
   margin: 50%
 }
 
+#DiscoverDiv {
+  margin-top: 2%
+}
+
+#BfCardContainer {
+  margin: auto;
+}
+
 /* .row {
   height: 200px;
 } */
