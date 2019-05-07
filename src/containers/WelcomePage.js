@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Image } from 'semantic-ui-react'
+import { Grid, Image, Container } from 'semantic-ui-react'
 import LoginForm from '../components/LoginForm'
 
 export default class WelcomePage extends Component {
@@ -12,7 +12,12 @@ export default class WelcomePage extends Component {
             <Image fluid src='https://react.semantic-ui.com/images/wireframe/image.png' />
           </Grid.Column>
           <Grid.Column width={6}>
-          < LoginForm className="LoginForm" />
+            < Container id="LoginForm" >
+              < LoginForm
+                className="LoginForm"
+                handleLoginSubmitButton={this.props.handleLoginSubmitButton}
+              />
+            </ Container >
           </Grid.Column>
         </Grid.Row>
       </Grid>

@@ -32,6 +32,27 @@ p {
   overflow-x: auto;
 }
 
+#ProfileContainer{
+  margin-top: 2%;
+  padding-bottom: 2%;
+  padding-top: 2%;
+  background-color: #E2B07F;
+  width: 100%
+}
+
+#ProfileCardContainer {
+  margin: auto;
+}
+
+#BfCard {
+  height: 33vh;
+  max-width: 25rem;
+}
+
+#LoginForm {
+  margin: 50%
+}
+
 /* .row {
   height: 200px;
 } */
