@@ -15,12 +15,11 @@ export default class BfForm extends React.Component {
     this.setState({
       [e.target.name]: e.target.value
     })
-
   }
 
   handleSubmit = e => {
     e.preventDefault()
-    const { name, description, location, image_url } = this.state
+    // const { name, description, location, image_url } = this.state
     fetch('http://localhost:3000/api/bumblefooks', {
       method: 'POST',
       headers: {
@@ -28,10 +27,10 @@ export default class BfForm extends React.Component {
         Accept: 'application/json'
       },
       body: JSON.stringify({
-        name: 'name',
-        description: 'description',
-        location: 'location',
-        image_url: 'image_url'
+        name: this.state.name,
+        description: this.state.description,
+        location: this.state.location,
+        image_url: this.state.image_url
       })
     })
       .then(resp => resp.json())
@@ -41,8 +40,9 @@ export default class BfForm extends React.Component {
 
 
 render() {
-  const { name, description, location, image_url } = this.state
-  const { handleChange, handleSubmit } = this
+  console.log(this.state)
+  // const { name, description, location, image_url } = this.state
+  const { handleSubmit } = this
  return (
    <div className='add'>
     <br />

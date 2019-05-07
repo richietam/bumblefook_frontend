@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Input, Menu, Container } from 'semantic-ui-react'
+import { Menu, Container } from 'semantic-ui-react'
 
 export default class MenuExampleSecondary extends Component {
   // <Menu.Item>
@@ -25,7 +25,7 @@ export default class MenuExampleSecondary extends Component {
   // }
 
   render() {
-    console.log('nav props', this.props.currentUser)
+    // console.log('nav props', this.props.currentUser)
 
     const { activeItem } = this.state
 
@@ -49,7 +49,7 @@ export default class MenuExampleSecondary extends Component {
         <Menu.Menu position='right'>
 
           <Menu.Item
-            name={this.props.currentUser ? this.props.currentUser : null}
+            name={this.props.currentUser ? this.props.currentUser.toLowerCase() : null}
             active={this.props.currentUser ? activeItem === 'Current User' : null}
             onClick={ () => this.props.changePage("UserProfile") }
           />
