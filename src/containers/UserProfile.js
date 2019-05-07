@@ -3,11 +3,13 @@ import { Grid, Container, Card } from 'semantic-ui-react'
 
 export default class UserProfile extends Component {
 
+
   renderFavBumbleFooks = () => {
     return this.findCurrentUser().bumblefooks.map( bumble => {
       return < Card raised fluid
         image={bumble.image_url}
         id="BfCard"
+        bf={bumble}
         key={bumble.id}
         alt=""
       />

@@ -57,6 +57,13 @@ p {
   margin-left: 20%;
   margin-right: 20%;
   margin-top: 5%;
+
+#DiscoverDiv {
+  margin-top: 2%
+}
+
+#BfCardContainer {
+  margin: auto;
 }
 
 /* .row {
