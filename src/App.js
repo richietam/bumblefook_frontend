@@ -46,6 +46,19 @@ class App extends Component {
   }
 
 
+  handleSubmitBumblefook = bumblefook => {
+    // console.log(bumblefook)
+      this.setState(
+        {
+          bumblefooks: [...this.state.bumblefooks, bumblefook],
+          page: "BfPage"
+        }
+      )
+  }
+
+
+
+
   renderPage = () => {
     switch(this.state.page){
       case "WelcomePage":
@@ -57,7 +70,7 @@ class App extends Component {
           handleBfCardClick={this.handleBfCardClick}
         />
       case "BfForm":
-        return < BfForm />
+        return < BfForm handleSubmitBumblefook={this.handleSubmitBumblefook}/>
       case "UserProfile":
         return < UserProfile />
       case "BfCardDetailContainer":

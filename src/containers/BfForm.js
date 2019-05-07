@@ -11,7 +11,7 @@ export default class BfForm extends React.Component {
   }
 
   handleChange = (e) => {
-    console.log(e.target.value)
+    // console.log(e.target.value)
     this.setState({
       [e.target.name]: e.target.value
     })
@@ -35,7 +35,8 @@ export default class BfForm extends React.Component {
       })
     })
       .then(resp => resp.json())
-      .then( (res) => console.log(res) )
+      .then(bumblefook => this.props.handleSubmitBumblefook(bumblefook))
+
   }
 
 
@@ -43,7 +44,7 @@ render() {
   const { name, description, location, image_url } = this.state
   const { handleChange, handleSubmit } = this
  return (
-   <div>
+   <div className='add'>
     <br />
      <h3>Add a Bumblefook!</h3>
      <Form onSubmit={handleSubmit}>
