@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Image, Container } from 'semantic-ui-react'
+import { Grid, Image, Container, Message } from 'semantic-ui-react'
 import LoginForm from '../components/LoginForm'
 
 export default class WelcomePage extends Component {
@@ -17,6 +17,9 @@ export default class WelcomePage extends Component {
                 className="LoginForm"
                 handleLoginSubmitButton={this.props.handleLoginSubmitButton}
               />
+              <Message >
+              New to us? <a href='#'>Sign Up</a>
+              </Message>
             </ Container >
           </Grid.Column>
         </Grid.Row>

@@ -8,6 +8,10 @@ export default class BfCardDetailContainer extends Component {
     this.props.handleBackButton()
   }
 
+  handleFavoriteClick = () => {
+    this.props.handleFavoriteSubmit(this.props.cardId)
+  }
+
   render () {
     console.log('BFCardContainer', this.props)
     return (
@@ -39,24 +43,27 @@ export default class BfCardDetailContainer extends Component {
 
               < Container >
 
-                <Button animated>
+                <Button animated onClick={this.handleFavoriteClick}>
                   <Button.Content visible >Save</Button.Content>
                   <Button.Content hidden>
                     <Icon name='heart' color='red' />
                   </Button.Content>
                 </Button>
+
                 <Button animated>
                   <Button.Content visible >Edit</Button.Content>
                   <Button.Content hidden>
                     <Icon name='edit' color='grey' />
                   </Button.Content>
                 </Button>
+
                 <Button animated>
                   <Button.Content visible >Delete</Button.Content>
                   <Button.Content hidden>
                     <Icon name='eraser' color='red' />
                   </Button.Content>
                 </Button>
+
                 <Button animated onClick={this.handleClick}>
                   <Button.Content visible >Back</Button.Content>
                   <Button.Content hidden>
