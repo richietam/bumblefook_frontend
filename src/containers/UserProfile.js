@@ -13,11 +13,13 @@ export default class UserProfile extends Component {
     })
   }
 
+
   findCurrentUser = () => {
-    
+
   }
 
   render () {
+
     return (
       < Grid columns={1} >
 

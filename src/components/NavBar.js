@@ -12,6 +12,18 @@ export default class MenuExampleSecondary extends Component {
     this.props.handleLogOut()
   }
 
+  // renderUserLink = () => {
+  //   if (this.props.currentUser) {
+  //     return <Menu.Item
+  //         name={this.props.currentUser}
+  //         active={activeItem === 'Current User'}
+  //         onClick={ () => this.props.changePage("UserProfile") }
+  //       />
+  //   } else {
+  //     return null
+  //   }
+  // }
+
   render() {
     console.log('nav props', this.props.currentUser)
 
