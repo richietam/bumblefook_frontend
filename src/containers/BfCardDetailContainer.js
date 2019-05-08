@@ -13,30 +13,31 @@ export default class BfCardDetailContainer extends Component {
   }
 
   render () {
+    const { id, name, description, location, image_url } = this.props.bfdata
+
     console.log('BFCardContainer', this.props)
     return (
 
       < Grid celled={'internally'} >
-
         < Grid.Row >
-
           < Grid.Column width={10} >
-            <Image fluid src={this.props.bumblefooks[this.props.cardId - 1] ? this.props.bumblefooks[this.props.cardId - 1].image_url : null} alt="" className="detailImage" />
+            <Image fluid src={this.props.bfdata ? image_url : null} alt="" className="detailImage" />
           </ Grid.Column >
 
           < Grid.Column width={6} >
+
             < Grid.Row >
               < Header as='h4'>
-                {this.props.bumblefooks[this.props.cardId - 1] ? this.props.bumblefooks[this.props.cardId - 1].name : null}
+                {this.props.bfdata ? name : null}
               </ Header >
-                Location: {this.props.bumblefooks[this.props.cardId - 1] ? this.props.bumblefooks[this.props.cardId - 1].location : null}
+                Location: {this.props.bfdata ? location : null}
             </ Grid.Row >
 
             < Grid.Row >
               < Divider />
               < Container >
                 <p>
-                  {this.props.bumblefooks[this.props.cardId - 1] ? this.props.bumblefooks[this.props.cardId - 1].description : null}
+                  {this.props.bfdata ? description : null}
                 </p>
               < / Container >
               < br/>
