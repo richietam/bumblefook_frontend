@@ -18,7 +18,7 @@ export default class WelcomePage extends Component {
                 handleLoginSubmitButton={this.props.handleLoginSubmitButton}
               />
               <Message >
-              New to us? <a href='#'>Sign Up</a>
+              New to us? <a href='root'>Sign Up</a>
               </Message>
             </ Container >
           </Grid.Column>
