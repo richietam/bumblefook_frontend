@@ -45,8 +45,8 @@ p {
 }
 
 #BfCard {
-  height: 33vh;
-  max-width: 25rem;
+  height: 27vh;
+  max-width: 29rem;
 }
 
 #LoginForm {
@@ -57,13 +57,20 @@ p {
   margin-left: 20%;
   margin-right: 20%;
   margin-top: 5%;
+}
 
 #DiscoverDiv {
   margin-top: 2%
 }
 
 #BfCardContainer {
-  margin: auto;
+
+  width: 90%;
+}
+
+#Modal {
+  height: auto;
+  width: 90%;
 }
 
 /* .row {
