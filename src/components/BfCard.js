@@ -9,11 +9,15 @@ class BfCard extends React.Component {
   }
 
   render(){
+    console.log('in bf card', this.props)
     return (
       <div>
-        <Card raised fluid id="BfCard">
-          <BfModal {...this.props} />
-        </Card>
+
+          <BfModal
+            {...this.props}
+            handleFavoriteSubmit={this.props.handleFavoriteSubmit}
+          />
+
       </div>
     )
   }

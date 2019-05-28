@@ -16,20 +16,7 @@ export default class NewUser extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-
-    fetch('http://localhost:3000/api/users/create', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
-      },
-      body: JSON.stringify({
-        name: this.state.name,
-        bio: this.state.bio,
-      })
-    })
-      .then(resp => resp.json())
-      .then(user => console.log(user))
+    this.props.handleNewUserSubmit(this.state.name, this.state.bio)
   }
 
   render () {

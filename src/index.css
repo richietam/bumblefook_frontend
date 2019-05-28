@@ -9,7 +9,7 @@ body {
 }
 
 #mainNav {
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid black;
   width: 100%;
   height: 55px;
 }
@@ -45,8 +45,8 @@ p {
 }
 
 #BfCard {
-  height: 27vh;
-  max-width: 29rem;
+  height: 250px;
+  width: 100%;
 }
 
 #LoginForm {
@@ -65,12 +65,16 @@ p {
 
 #BfCardContainer {
 
-  width: 90%;
+  width: 100%;
 }
 
 #Modal {
   height: auto;
   width: 90%;
+}
+
+#stackgrid {
+  margin-top: 1%;
 }
 
 /* .row {

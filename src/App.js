@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import BfPage from './containers/BfPage'
+import BfCardContainer from './containers/BfCardContainer'
 import NavBar from './components/NavBar'
 import BfForm from './containers/BfForm'
 import WelcomePage from './containers/WelcomePage'
@@ -28,6 +28,12 @@ class App extends Component {
         bumblefooks: data1,
         users: data2
       }))
+  }
+
+  handleNewUserClick = () => {
+    this.setState({
+      page: "NewUser"
+    })
   }
 
   handleBfCardClick = (bf) => {
@@ -83,6 +89,32 @@ class App extends Component {
     return foundUser
   }
 
+  handleNewUserSubmit = ( (newName, newBio) => {
+    fetch('http://localhost:3000/api/users/create', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify({
+        name: newName,
+        bio: newBio,
+      })
+    })
+      .then(resp => resp.json())
+      .then(user =>
+        fetch('http://localhost:3000/api/users')
+          .then(res => res.json())
+          .then(users => {
+            this.setState({
+              currentUser: user.name,
+              users: users,
+              page: "UserProfile"
+            })
+          }))
+  })
+
+
   handleFavoriteSubmit = (data) => {
     const currentUser = this.findCurrentUser()
     console.log('submit button is clicked data is', data, this.findCurrentUser())
@@ -116,12 +148,15 @@ class App extends Component {
       case "WelcomePage":
         return < WelcomePage
           handleLoginSubmitButton={this.handleLoginSubmitButton}
+          handleNewUserClick={this.handleNewUserClick}
         />
       case "BfPage":
-        return < BfPage
+        return < BfCardContainer
           bumblefooks={this.state.bumblefooks}
           cardId={this.state.cardId}
           handleBfCardClick={this.handleBfCardClick}
+          handleFavoriteSubmit={this.handleFavoriteSubmit}
+          handleBackButton={this.handleBackButton}
         />
       case "BfForm":
         return < BfForm handleSubmitBumblefook={this.handleSubmitBumblefook}/>
@@ -141,6 +176,7 @@ class App extends Component {
         />
       case "NewUser":
         return < NewUser
+          handleNewUserSubmit={this.handleNewUserSubmit}
         />
       default:
         return null

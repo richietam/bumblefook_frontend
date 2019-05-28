@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Container, Card } from 'semantic-ui-react'
+import StackGrid from "react-stack-grid";
 
 export default class UserProfile extends Component {
 
@@ -16,10 +17,10 @@ export default class UserProfile extends Component {
     })
   }
 
-  filterUserFavorites = () => {
-    // grab ids from favorites
-    //
-  }
+  // filterUserFavorites = () => {
+   // grab ids from favorites
+   //
+  // }
 
   findCurrentUser = () => {
     const foundUser = this.props.users.find( bf => {
@@ -42,17 +43,24 @@ export default class UserProfile extends Component {
                 className="ui small circular image centered"
                 alt=""
               />
+              <Container>
+              <br/>
+                Name: {this.findCurrentUser().name}
+              <br/>
+                Bio: {this.findCurrentUser().bio}
+              </ Container>
             </Container>
           </ Grid.Column >
         </ Grid.Row >
 
         < Grid.Row >
           < Grid.Column >
-            <Container id="ProfileCardContainer">
-              < Card.Group itemsPerRow={3}>
-                {this.renderFavBumbleFooks()}
-              </ Card.Group>
-            </Container>
+          <StackGrid
+             columnWidth={500}
+             id="stackgrid"
+           >
+           {this.renderFavBumbleFooks()}
+           </StackGrid>
           </ Grid.Column >
         </ Grid.Row >
 

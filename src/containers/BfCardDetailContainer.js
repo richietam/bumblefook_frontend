@@ -9,7 +9,7 @@ export default class BfCardDetailContainer extends Component {
   }
 
   handleFavoriteClick = () => {
-    this.props.handleFavoriteSubmit(this.props.cardId)
+    this.props.handleFavoriteSubmit(this.props.bfdata.id)
   }
 
   render () {
@@ -48,20 +48,6 @@ export default class BfCardDetailContainer extends Component {
                   <Button.Content visible >Save</Button.Content>
                   <Button.Content hidden>
                     <Icon name='heart' color='red' />
-                  </Button.Content>
-                </Button>
-
-                <Button animated>
-                  <Button.Content visible >Edit</Button.Content>
-                  <Button.Content hidden>
-                    <Icon name='edit' color='grey' />
-                  </Button.Content>
-                </Button>
-
-                <Button animated>
-                  <Button.Content visible >Delete</Button.Content>
-                  <Button.Content hidden>
-                    <Icon name='eraser' color='red' />
                   </Button.Content>
                 </Button>
 
