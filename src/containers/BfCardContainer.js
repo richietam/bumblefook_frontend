@@ -1,6 +1,8 @@
 import React from "react"
 import BfCard from '../components/BfCard'
 import { Grid, Image, Header, Divider, Container, Button, Icon, Card } from 'semantic-ui-react'
+import StackGrid from "react-stack-grid";
+
 
 class BfCardContainer extends React.Component {
 
@@ -10,6 +12,7 @@ class BfCardContainer extends React.Component {
             key={bf.id}
             bf={bf}
             handleBfCardClick={this.props.handleBfCardClick}
+            handleFavoriteSubmit={this.props.handleFavoriteSubmit}
         />
       })
     }
@@ -17,19 +20,12 @@ class BfCardContainer extends React.Component {
   render(){
 
   	return (
-      <div id="DiscoverDiv">
-        <Grid columns={1} className="Naomi">
-          <Grid.Row >
-            <Grid.Column >
-              <Container id="BfCardContainer">
-                <Card.Group itemsPerRow={4}>
-          		     {this.renderBfGallery()}
-                </Card.Group>
-              < /Container>
-            < /Grid.Column >
-          < /Grid.Row>
-        </Grid>
-  </div>
+      <StackGrid
+         columnWidth={500}
+         id="stackgrid"
+       >
+       {this.renderBfGallery()}
+       </StackGrid>
   	)
   }
 }

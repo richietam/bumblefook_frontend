@@ -13,7 +13,11 @@ class BfModal extends React.Component{
         id="Modal"
       >
       <Modal.Header>
-        < BfCardDetailContainer bfdata={this.props.bf} />
+        < BfCardDetailContainer
+          bfdata={this.props.bf}
+          handleFavoriteSubmit={this.props.handleFavoriteSubmit}
+        />
+
       </Modal.Header>
 
     </Modal>
